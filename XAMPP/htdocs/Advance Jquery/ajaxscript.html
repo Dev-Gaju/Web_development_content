@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>Ajax</title>
+		<script src="jquery.js"></script>
+		<script src="js/bootstrap.js"></script>
+		<link rel="stylesheet" href="css/bootstrap.css">
+	</head>
+	<body>
+		<div class="container">
+			<h2 id="change">This will be change</h2>
+			<button class="btn btn-success" onclick="myfun()" >just click</button>
+		</div>
+
+		<script type="text/javascript">
+			function myfun(){
+              var req= new XMLHttpRequest();
+              req.open('GET','load.html',true);
+              req.send();
+              req.onreadystatechange=function(){
+              	if (req.readyState==4 && req.status==200) {
+              		document.getElementById('change').innerHTML=req.responseText;
+              	}
+              }
+
+			}
+			
+		</script>
+	</body>
+</html>

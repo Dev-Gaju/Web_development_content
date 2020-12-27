@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Outside Component </title>
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	<link rel="stylesheet" href="css/bootstrap.css">
+</head>
+<body>
+
+	<div id="app">
+		<composer v-model="value"></composer>
+		<div class="form-group col-sm-4">
+		<label>Outside of the box</label>
+		<input type="" class="form-control" name="" v-model="value">
+		 </div>
+
+
+	</div>
+
+	<script type="text/javascript">
+		Vue.component('composer',{
+			template:`
+              <div>
+               <label for="">Inside of the Component</label>
+               <input type="text" class="form-control" v-on:input="change(valueC)" v-model="valueC" >
+              </div>
+			`,
+
+			methods:{
+				change(valueC){
+					this.$emit('input',valueC)
+				}
+			}
+		});
+
+		new Vue({
+			el:'#app',
+			data:{
+                  value:''
+
+			},
+			methods:{
+
+			}
+		})
+	</script>
+	
+</body>
+</html>

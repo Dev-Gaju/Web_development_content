@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Ajax</title>
+	<script src="jquery.js"></script>
+	<script src="js/bootstrap.js"></script>
+	<link rel="stylesheet" href="css/bootstrap.css">
+</head>
+<body>
+	<div class="container">
+			<h2 id="change">This will be change</h2>
+			<button class="btn btn-success" id="MainButton" >just click</button>
+		</div>
+	<script  type="text/javascript" charset="utf-8" async defer>
+		$(document).ready(function() {
+			$('#MainButton').click(function(){
+              $('#change').load('load.html');
+			});
+		});
+
+	</script>
+	
+		
+	
+</body>
+</html>

@@ -1,0 +1,33 @@
+from random import shuffle
+def partition(A, l, n, pivot):
+    p = A[pivot]
+    A[n - 1], A[pivot] = A[pivot], A[n - 1]
+    i = l - 1
+    for j in range(l, n):
+        if A[j] <= p:
+            i += 1
+            A[i], A[j] = A[j], A[i]
+    return i
+
+def randselect(A, l, hi, k):
+    shuffle(A)  # shuffling is the randomization.
+    while True:
+        q = partition(A, l, hi,l)
+        if q == k:
+            return A[q]
+        elif q < k:
+            l = q + 1
+        else:
+            hi = q
+
+if __name__ == "__main__":
+ arr = []
+ c = int(input("Enter The Value of n: "))
+ for i in range(0, c):
+        ele = int(input(""))
+        arr.append(ele)
+print(f"Elements Are: {arr}")
+n = len(arr)
+k =int(input("enter the kth value : "))
+print("K'th smallest element is",
+randselect(arr, 0, n, k))

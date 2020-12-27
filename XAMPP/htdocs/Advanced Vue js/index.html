@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Vue js</title>
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+		<link rel="stylesheet" type="text/css" href="style.css">
+	</head>
+	<body>
+		<div id="vue-app">
+			<h1>{{name}}</h1>
+			<p>{{greet('AfterNoon')}} </p>
+			<a v-bind:href="website">Youtube</a><br><br><br>
+			<input type="" name="" v-bind:value="name">
+			<p v-html="websiteTage"></p>
+			<h3 v-for = "tod in todos" >
+			{{tod.text}}
+			</h3>
+			
+			<ol>
+				<li v-for = "todo  in todos">
+					{{todo.text }}
+				</li>
+			</ol>
+			<h3 class="font-weight-bold"> {{ age}}<br></h3>
+			
+			<button v-on:dblclick="add">Increase</button>
+			<button v-on:click="sub">decrease</button>
+			<div id="canvas">
+				<p v-on:mousemove="updateXY">{{x}}, {{y}}</p>
+			</div>
+			<label>Enter Your name</label>
+			<input type="text" name="" value="" v-on:keyup.alt.enter="Yourname"><br> <br>
+		</div><br><br>
+		
+		
+	</div>
+	<script src="app.js" ></script>
+</body>
+</html>

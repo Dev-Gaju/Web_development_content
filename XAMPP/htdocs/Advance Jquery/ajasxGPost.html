@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Get and Post</title>
+	<script src="jquery.js"></script>
+	<script src="js/bootstrap.js"></script>
+	<link rel="stylesheet" href="css/bootstrap.css">
+</head>
+<body>
+	<div class="container">
+		<h3 id="changable">This will be Change</h3>
+		<button class="btn btn-primary btnclick"> Check</button>
+	</div>
+	<script type="text/javascript">
+		
+		$(document).ready(function() {
+			$('.btnclick').click(function(){
+              // $.get('load.html',function(data, status){
+              //   $('#changable').html(data);
+              //   alert(status);
+
+               $.post('post.php',{
+
+               	name:"Gaju Ahmed",
+                work:"Developer"
+
+
+               },function(data,status){
+
+               	$('#changable').html(data)
+               	alert(status)
+               });
+
+              });
+			});
+			
+	</script>
+	
+</body>
+</html>

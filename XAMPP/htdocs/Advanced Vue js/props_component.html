@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>props</title>
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	<link rel="stylesheet" href="css/bootstrap.css">
+</head>
+<body>
+	<div id="app">
+      
+       <sidebar :number="value"></sidebar>
+
+       <div class="form-group col-sm-6">
+       	
+       	<button type="" v-on:click="increament" class="btn-primary">Add Value</button>
+       	{{value}}
+
+       </div>
+
+
+</div>
+
+
+	<script type="text/javascript">
+	 Vue.component('sidebar',{
+           template:`
+				<div class='col-lg-4'>
+					<ul>
+					    <li>{{number}}</li>
+					    <li>About</li>
+					    <li>Service</li>
+					    <li>Bitfumes</li>
+					</ul>
+					<a class='btn btn-info'>{{ number }}</a>
+				</div>
+			`,
+
+			props:[
+             'number'
+			]
+	 });
+        
+
+        new Vue({
+        	el:'#app',
+        	data:{
+        		value:0
+        	},
+        	methods:{
+        		increament(){
+        			this.value +=1;
+        		}
+        	}
+        })
+       
+
+	</script>
+	
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	<link rel="stylesheet" href="css/bootstrap.css">
+</head>
+<body>
+	<div class="container">
+		<div id="app">
+		<br>
+			<div class="col-lg-offset-4 col-lg-4">
+				<ul class="list-group">
+				  <li class="list-group-item" :class='fruit.class' v-for="fruit in fruits" @click='click(fruit)'>
+				    <span class="badge">{{ fruit.cost }}</span>
+				    {{ fruit.name }}
+				  </li>
+				  <li class="list-group-item">{{ total }}  </li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	
+	<script>
+		new Vue ({
+			el:'#app',
+			data:{
+				total:0,
+				fruits:[
+					{name:'apple',cost:10,clicked:false,class:'unselect'},
+					{name:'mango',cost:20,clicked:false,class:'unselect'},
+					{name:'banana',cost:30,clicked:false,class:'unselect'}
+				]
+			},
+			methods:{
+				click:function(fruit){
+					if (fruit.clicked) {
+						this.total -= fruit.cost;
+						fruit.class = 'unselect';
+					}else{
+						this.total += fruit.cost;
+						fruit.class = 'select';
+					}
+					fruit.clicked = !fruit.clicked;
+				}
+			}
+		});
+	</script>
+	<style>
+		.select{
+			background-color:  #7badfc;
+		}
+		.unselect{
+			background-color: #fc7baa;
+		}
+	</style>
+
+</body>
+</html>

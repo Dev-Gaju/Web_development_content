@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css" integrity="sha256-vK3UTo/8wHbaUn+dTQD0X6dzidqc5l7gczvH+Bnowwk=" crossorigin="anonymous" />
+	<title>Modal</title>
+</head>
+<body>
+	<div class="container" id="app">
+		<btn @button_clicked='launchModal'></btn>
+
+		<modal :active='activateModal'>
+			Vue Tutorial
+			<template slot='section'>Utilize the Bootstrap grid system within a modal by nesting .container-fluid within the .modal-body. Then, use the normal grid system classes as you would anywhere else.</template>
+
+		</modal>
+
+		
+		
+	</div>
+<script type="text/javascript" src="modal.js" ></script>
+</body>
+</html>
